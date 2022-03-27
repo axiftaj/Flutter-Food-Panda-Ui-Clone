@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_rating_bar: ^4.0.0
+  scrollable_list_tabview: ^0.2.0-nullsafety
 
 dev_dependencies:
   flutter_test:
