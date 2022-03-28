@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             child: Image(
                                                 fit: BoxFit.cover,
                                                 height: height * .2,
-                                                image: NetworkImage(model.image))),
+                                                image: AssetImage(model.image))),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(vertical: 15),
                                           child: Container(
@@ -223,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             child: Image(
                                                 fit: BoxFit.cover,
                                                 height: height * .2,
-                                                image: NetworkImage(model.image))),
+                                                image: AssetImage(model.image))),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(vertical: 15),
                                           child: Container(
@@ -339,7 +339,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               fit: BoxFit.cover,
                                               width: width * 1,
                                               height: height * .2,
-                                              image: NetworkImage(model.image))),
+                                              image: AssetImage(model.image))),
                                       Padding(
                                         padding: const EdgeInsets.symmetric(vertical: 15),
                                         child: Container(

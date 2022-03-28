@@ -121,7 +121,7 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                       children: [
                         Image(
                           fit: BoxFit.fitHeight,
-                          image: NetworkImage('https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?cs=srgb&dl=pexels-engin-akyurt-1435907.jpg&fm=jpg'),),
+                          image: NetworkImage('https://assets.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?cs=srgb&dl=pexels-engin-akyurt-1435907.jpg&fm=jpg'),),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Favoruite Deal 1' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w900, fontSize: 18, fontFamily: Bold),),

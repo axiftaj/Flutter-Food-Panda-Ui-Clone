@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -60,33 +62,46 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
            children: [
-             InkWell(
-               onTap: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-               },
-               child: Container(
-                 height: MediaQuery.of(context).size.height * .18,
-                 width: double.infinity,
-                 decoration: BoxDecoration(
-                   color: MyColors.primaryColor,
-                   borderRadius: BorderRadius.circular(10)
-                 ),
-                 child: Stack(
-                   alignment: Alignment.bottomLeft,
-                   children: [
-                     Padding(
-                       padding: const EdgeInsets.all(10.0),
-                       child: Column(
-                         mainAxisAlignment: MainAxisAlignment.start,
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         mainAxisSize: MainAxisSize.min,
-                         children: [
-                           Text('Food delivery' , style: TextStyle(color: Colors.white , fontFamily: Bold, fontSize: 18 ),),
-                           Text('Order from your faviruite\nrestaurants and home chefs' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Light, fontSize: 14  )),
-                         ],
-                       ),
-                     )
-                   ],
+             ClipRRect(
+               borderRadius: BorderRadius.circular(10),
+               child: InkWell(
+                 onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                 },
+                 child: Container(
+                   height: MediaQuery.of(context).size.height * .18,
+                   width: double.infinity,
+                   decoration: BoxDecoration(
+                     color: MyColors.primaryColor,
+                     borderRadius: BorderRadius.circular(10)
+                   ),
+                   child: Stack(
+                     alignment: Alignment.bottomLeft,
+                     children: [
+                       Image(
+                           fit: BoxFit.fitWidth,
+                           width: double.infinity,
+                           image: NetworkImage('https://cdn.pixabay.com/photo/2021/01/16/09/05/meal-5921491_960_720.jpg')),
+                       Padding(
+                         padding: const EdgeInsets.all(6.0),
+                         child: Container(
+                         
+                           child: Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Column(
+                               mainAxisAlignment: MainAxisAlignment.start,
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               mainAxisSize: MainAxisSize.min,
+                               children: [
+                                 Text('Food delivery' , style: TextStyle(color: Colors.white , fontFamily: Bold, fontSize: 18 ),),
+                                 Text('Order from your faviruite\nrestaurants and home chefs' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  )),
+                               ],
+                             ),
+                           ),
+                         ),
+                       )
+                     ],
+                   ),
                  ),
                ),
              ),
@@ -98,32 +113,70 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                      flex: 1,
                      child: Container(
                        height: MediaQuery.of(context).size.height * .25,
-
                        decoration: BoxDecoration(
-                           color: Colors.yellow.withOpacity(0.6),
+                           color: Color(0xfffed271),
                            borderRadius: BorderRadius.circular(10)
+                       ),
+                       child: Padding(
+                         padding: const EdgeInsets.all(10.0),
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.end,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Text('pandamart' , style: TextStyle(color: blackColor , fontFamily: Bold, fontSize: 18 ),),
+                             Text('panda20 for 20% off' , style: TextStyle(color: blackColor , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  )),
+
+                           ],
+                         ),
                        ),
                      ),
                    ),
-                   SizedBox(width: 10,),
+                   SizedBox(width: 8,),
                    Expanded(
                      flex: 1,
                      child: Column(
                        children: [
                          Container(
                            height: MediaQuery.of(context).size.height * .15,
+                           width: double.infinity,
                            decoration: BoxDecoration(
-                               color: Colors.pink.withOpacity(0.4),
+                               color: Color(0xffef9fc4),
                                borderRadius: BorderRadius.circular(10)
+                           ),
+                           child: Padding(
+                             padding: const EdgeInsets.all(10.0),
+                             child: Column(
+                               mainAxisAlignment: MainAxisAlignment.end,
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                                 Text('Pick-Uo' , style: TextStyle(color: blackColor , fontFamily: Bold, fontSize: 18 ),),
+                                 Text('Upto 50% off' , style: TextStyle(color: blackColor , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  )),
+
+                               ],
+                             ),
                            ),
                          ),
                          SizedBox(height: 5),
                          Container(
                            height: MediaQuery.of(context).size.height * .1,
+                           width: double.infinity,
                            decoration: BoxDecoration(
-                               color: Colors.blue.withOpacity(0.5),
+                               color: Color(0xff85bfff),
                                borderRadius: BorderRadius.circular(10)
                            ),
+                           child: Padding(
+                             padding: const EdgeInsets.all(10.0),
+                             child: Column(
+                               mainAxisAlignment: MainAxisAlignment.end,
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                                 Text('Shops' , style: TextStyle(color: blackColor , fontFamily: Bold, fontSize: 18 ),),
+                                 Text('Everyday assentials' , style: TextStyle(color: blackColor , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  )),
+
+                               ],
+                             ),
+                           ),
+
                          )
                        ],
                      ),
@@ -136,7 +189,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
              Padding(
                padding: const EdgeInsets.symmetric(vertical: 10),
                child: Container(
-                 height: MediaQuery.of(context).size.height * .278,
+                 height: MediaQuery.of(context).size.height * .25,
                  child: ListView.builder(
                      itemCount: PandaPickHelper.itemCount,
                      scrollDirection: Axis.horizontal,
@@ -148,14 +201,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                          child: Padding(
                            padding: const EdgeInsets.only(right: 10),
                            child: Container(
-                             height: height * .3,
-                             width: width * .6,
+                             height: height * .28,
+                             width: width * .4,
                              child: Column(
                                mainAxisAlignment: MainAxisAlignment.start,
                                crossAxisAlignment: CrossAxisAlignment.start,
                                children: [
                                  Stack(
                                    children: [
+                                     Text(model.name , style: TextStyle(color: Color(0xff323232) , fontSize: 14, fontFamily: Bold),),
                                      ClipRRect(
                                          borderRadius: BorderRadius.circular(10),
                                          child: Image(
@@ -200,45 +254,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                    ],
                                  ),
                                  SizedBox(height: 5  ,),
-                                 Row(
-                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                   children: [
-                                     Text(model.name , style: TextStyle(color: Color(0xff323232) , fontSize: 14, fontFamily: Bold),),
-                                     Row(
-                                       children: [
-                                         RatingBarIndicator(
-                                           rating: 2.75,
-                                           itemBuilder: (context, index) => Icon(
-                                             Icons.star,
-                                             color: Colors.amber,
-                                           ),
-                                           itemCount: 1,
-                                           itemSize: 19.0,
-                                           direction: Axis.horizontal,
-                                         ),
-                                         Text(" "+model.ratting , style: TextStyle(color: Color(0xff323232) , fontSize: 12, fontFamily: Bold),),
-                                         Text("  ("+model.totalRating+")" , style: TextStyle(color: Color(0xffa9a9a9) ,
-                                             fontSize: 12, fontFamily: Light),),
-
-                                       ],
-                                     )
-                                   ],
-                                 ),
-                                 SizedBox(height: 3,),
-                                 SizedBox(height: 3,),
-                                 Text(r"$ • "+model.subTitle, style: TextStyle(color: Color(0xff707070) ,
-                                     fontSize: 12, fontFamily: Regular),),
-                                 SizedBox(height: 3,),
-                                 Row(
-                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                   mainAxisAlignment: MainAxisAlignment.start,
-                                   children: [
-                                     Icon(Icons.directions_bike , size: 14  , color: MyColors.primaryColor,),
-                                     Text(r"  Rs  "+model.deliveryPrice, style: TextStyle(color: Color(0xff707070) ,
-                                         fontSize: 12, fontFamily: Regular),),
-
-                                   ],
-                                 )
 
                                ],
                              ),
@@ -263,7 +278,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               child: CircleAvatar(
                 radius: 30,
-                backgroundImage: NetworkImage('https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?cs=srgb&dl=pexels-engin-akyurt-1435907.jpg&fm=jpg'),
+                backgroundImage: NetworkImage('https://assets.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?cs=srgb&dl=pexels-engin-akyurt-1435907.jpg&fm=jpg'),
               ),
             ),
             ListTile(
