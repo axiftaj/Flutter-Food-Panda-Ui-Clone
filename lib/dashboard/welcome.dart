@@ -56,7 +56,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
         ),
       ),
-
       body:  SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15 ,vertical: 15),
@@ -96,6 +95,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                children: [
                                  Text('Food delivery' , style: TextStyle(color: Colors.white , fontFamily: Bold, fontSize: 18 ),),
                                  Text('Order from your faviruite\nrestaurants and home chefs' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  )),
+
                                ],
                              ),
                            ),
@@ -238,6 +238,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: CircleAvatar(
                 radius: 24,
                 backgroundImage: NetworkImage('https://media-exp1.licdn.com/dms/image/C5603AQFtuW78eNazIw/profile-displayphoto-shrink_800_800/0/1567442703746?e=2147483647&v=beta&t=N5dGxws3xJIhwPM8w_i4dlX8qLmxznmVykPCTccYHj8'),
+
               ),
             ),
             ListTile(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/constats/color.dart';
 import 'package:instagram_clone/constats/constants.dart';
+import 'package:instagram_clone/dashboard/splash_screen.dart';
 import 'package:instagram_clone/dashboard/welcome.dart';
 
 void main() {
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
               iconTheme: IconThemeData(color: MyColors.primaryColor)
           )
       ),
-      home:  WelcomeScreen(),
+      home:  SplashScreen(),
     );
   }
 }

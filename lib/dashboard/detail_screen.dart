@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/constats/color.dart';
 import 'package:instagram_clone/constats/constants.dart';
-import 'package:scrollable_list_tabview/model/scrollable_list_tab.dart';
+
 import 'package:scrollable_list_tabview/scrollable_list_tabview.dart';
 
 class DetailScreen extends StatefulWidget {
