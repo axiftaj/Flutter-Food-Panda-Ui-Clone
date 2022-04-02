@@ -5,8 +5,6 @@
 - [LinkedIn](https://www.linkedin.com/in/axiftaj/)
 - [Facebook Group](https://www.facebook.com/aaxiftaj)
 
-# Video Demo
-
 
 ![new](https://user-images.githubusercontent.com/47206155/161398166-7d2af7f3-490f-4f1c-ae9b-be288597f25e.png)
 
