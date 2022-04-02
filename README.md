@@ -1,16 +1,14 @@
-# instagram_clone
+# Foodpand UI Clone
 
-A new Flutter project.
 
-## Getting Started
+- [Youtube](https://youtu.be/bCS1ddMT_sU)
+- [LinkedIn](https://www.linkedin.com/in/axiftaj/)
+- [Facebook Group](https://www.facebook.com/aaxiftaj)
 
-This project is a starting point for a Flutter application.
+# Video Demo
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![new](https://user-images.githubusercontent.com/47206155/161398166-7d2af7f3-490f-4f1c-ae9b-be288597f25e.png)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+![food panda thumnail](https://user-images.githubusercontent.com/47206155/161398035-b2531a0a-1a44-4bc4-b422-041cdd699824.png)
