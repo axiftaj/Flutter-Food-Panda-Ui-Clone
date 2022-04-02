@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:instagram_clone/compnents/restuarent.dart';
 import 'package:instagram_clone/constats/color.dart';
 import 'package:instagram_clone/constats/constants.dart';
 import 'package:instagram_clone/dashboard/home.dart';
@@ -119,12 +120,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                        ),
                        child: Padding(
                          padding: const EdgeInsets.all(10.0),
-                         child: Column(
-                           mainAxisAlignment: MainAxisAlignment.end,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text('pandamart' , style: TextStyle(color: blackColor , fontFamily: Bold, fontSize: 18 ),),
-                             Text('panda20 for 20% off' , style: TextStyle(color: blackColor , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  )),
+                         child: Stack(
+                           alignment: Alignment.center,
+                           children: const [
+                             CircleAvatar(
+                               radius: 50,
+                               backgroundImage: AssetImage('assets/pandamart.jpg'),
+                             ),
+                             Positioned(
+                                 bottom: 15,
+                                 left: 0,
+                                 child: Text('pandamart' , style: TextStyle(color: blackColor , fontFamily: Bold, fontSize: 18 ),)),
+                             Positioned(
+                                 bottom: 0,
+                                 left: 0,
+                                 child: Text('panda20 for 20% off' , style: TextStyle(color: blackColor , fontWeight: FontWeight.w500 ,height:1 , fontFamily: Medium, fontSize: 14  ))),
 
                            ],
                          ),
@@ -141,7 +151,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                            width: double.infinity,
                            decoration: BoxDecoration(
                                color: Color(0xffef9fc4),
-                               borderRadius: BorderRadius.circular(10)
+                               borderRadius: BorderRadius.circular(10),
+                             image: DecorationImage(
+                                 image: AssetImage('assets/food.jpg')
+
+                             )
                            ),
                            child: Padding(
                              padding: const EdgeInsets.all(10.0),
@@ -189,76 +203,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
              Padding(
                padding: const EdgeInsets.symmetric(vertical: 10),
                child: Container(
-                 height: MediaQuery.of(context).size.height * .25,
+                 height: MediaQuery.of(context).size.height * .278,
+
                  child: ListView.builder(
                      itemCount: PandaPickHelper.itemCount,
                      scrollDirection: Axis.horizontal,
                      itemBuilder: (context, index){
                        PandaPickItemModel model = PandaPickHelper.getStatusItem(index);
-                       return InkWell(
-                         onTap: (){
-                         },
-                         child: Padding(
-                           padding: const EdgeInsets.only(right: 10),
-                           child: Container(
-                             height: height * .28,
-                             width: width * .4,
-                             child: Column(
-                               mainAxisAlignment: MainAxisAlignment.start,
-                               crossAxisAlignment: CrossAxisAlignment.start,
-                               children: [
-                                 Stack(
-                                   children: [
-                                     Text(model.name , style: TextStyle(color: Color(0xff323232) , fontSize: 14, fontFamily: Bold),),
-                                     ClipRRect(
-                                         borderRadius: BorderRadius.circular(10),
-                                         child: Image(
-                                             fit: BoxFit.cover,
-                                             height: height * .2,
-                                             image: NetworkImage(model.image))),
-                                     Padding(
-                                       padding: const EdgeInsets.symmetric(vertical: 15),
-                                       child: Container(
-                                         decoration: BoxDecoration(
-                                             color: MyColors.primaryColor,
-                                             borderRadius: BorderRadius.only(
-                                               topRight: Radius.circular(20),
-                                               bottomRight: Radius.circular(20),
-                                             )
-                                         ),
-                                         child:  Padding(
-                                           padding: const EdgeInsets.only(top: 7, left: 5 , right: 10, bottom: 7),
-                                           child: Text("Flash 20% OFF" , style: TextStyle(color: Colors.white , fontSize: 10, fontFamily: Bold),),
-                                         ),
-
-                                       ),
-                                     ),
-                                     Positioned(
-                                       bottom: 0,
-                                       left: 10 ,
-                                       child: Padding(
-                                         padding: const EdgeInsets.symmetric(vertical: 10),
-                                         child: Container(
-                                           decoration: BoxDecoration(
-                                               color: Color(0xfffffcff),
-                                               borderRadius: BorderRadius.circular(20.0)
-                                           ),
-                                           child:  Padding(
-                                             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                             child: Text(model.remaingTime , style: TextStyle(color: blackColor , fontSize: 12, fontFamily: Bold),),
-                                           ),
-
-                                         ),
-                                       ),
-                                     ),
-                                   ],
-                                 ),
-                                 SizedBox(height: 5  ,),
-
-                               ],
-                             ),
-                           ),
-                         ),
+                       return RestuarentScreen(
+                         name: model.name,
+                         image:model.image ,
+                         remainingTime: model.remaingTime,
+                         totalRating: model.totalRating,
+                         subTitle: model.subTitle,
+                         rating: model.ratting,
+                         deliveryTime: model.remaingTime, deliveryPrice: model.deliveryPrice,
                        );
                      }),
                ),
@@ -277,8 +236,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 color: MyColors.primaryColor,
               ),
               child: CircleAvatar(
-                radius: 30,
-                backgroundImage: NetworkImage('https://assets.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?cs=srgb&dl=pexels-engin-akyurt-1435907.jpg&fm=jpg'),
+                radius: 24,
+                backgroundImage: NetworkImage('https://media-exp1.licdn.com/dms/image/C5603AQFtuW78eNazIw/profile-displayphoto-shrink_800_800/0/1567442703746?e=2147483647&v=beta&t=N5dGxws3xJIhwPM8w_i4dlX8qLmxznmVykPCTccYHj8'),
               ),
             ),
             ListTile(

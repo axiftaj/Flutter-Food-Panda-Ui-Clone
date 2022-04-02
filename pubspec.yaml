@@ -64,6 +64,11 @@ flutter:
     - assets/burger.jpg
     - assets/noddels.jpg
     - assets/pizza.jpg
+    - assets/cake.jpg
+    - assets/chicken.jpg
+    - assets/chinese.jpg
+    - assets/pandamart.jpg
+    - assets/food.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

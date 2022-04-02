@@ -51,7 +51,7 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                         color: Colors.grey,
                         child: Image(
                             fit: BoxFit.cover,
-                            image: NetworkImage(widget.image)),
+                            image: AssetImage(widget.image)),
                       ),
                       // Padding(
                       //   padding: const EdgeInsets.all(10.0),
@@ -89,15 +89,38 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: 10,
-                  itemBuilder: (_, index) => ListTile(
-                    leading: Container(
-                      height: 40,
-                      width: 40,
-
-                      alignment: Alignment.center,
-                      child: Text(index.toString()),
-                    ),
-                    title: Text('List element $index'),
+                  itemBuilder: (_, index) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        title: Text('Chicken Tike Pizz' , style: const TextStyle(fontFamily: Bold),),
+                        subtitle: Text("Onion, capsicum, tomat & olive"),
+                        trailing: Container(
+                        height: 80,
+                        width: 80,
+                        alignment: Alignment.center,
+                        child: Image(image: AssetImage('assets/pizza.jpg')),
+                      ),
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Text("RS. 120.00"),
+                          ),
+                          Container(
+                            width: 90,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xffeab676).withOpacity(0.5)),
+                            child: Center(
+                              child: Text('🔥 Popular' , style: TextStyle( fontSize: 14,color: blackColor , fontFamily: Medium),),
+                            ),
+                          )
+                        ],
+                      ),
+                      Divider()
+                    ],
                   ),
                 ),
               ),
@@ -121,7 +144,7 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                       children: [
                         Image(
                           fit: BoxFit.fitHeight,
-                          image: NetworkImage('https://assets.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?cs=srgb&dl=pexels-engin-akyurt-1435907.jpg&fm=jpg'),),
+                          image: AssetImage('assets/cake.jpg'),),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Favoruite Deal 1' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w900, fontSize: 18, fontFamily: Bold),),
