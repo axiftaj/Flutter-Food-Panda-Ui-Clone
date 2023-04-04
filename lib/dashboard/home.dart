@@ -71,65 +71,40 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 10),
         child: SingleChildScrollView(
-          child: Container(
-            height: height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Panda Pick' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * .278,
-                    child: ListView.builder(
-                        itemCount: PandaPickHelper.itemCount,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index){
-                          PandaPickItemModel model = PandaPickHelper.getStatusItem(index);
-                          return RestuarentScreen(
-                            name: model.name,
-                            image:model.image ,
-                            remainingTime: model.remaingTime,
-                            totalRating: model.totalRating,
-                            subTitle: model.subTitle,
-                            rating: model.ratting,
-                            deliveryTime: model.remaingTime, deliveryPrice: model.deliveryPrice,
-                          );
-                        }),
-                  ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Panda Pick' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * .278,
+                  child: ListView.builder(
+                      itemCount: PandaPickHelper.itemCount,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index){
+                        PandaPickItemModel model = PandaPickHelper.getStatusItem(index);
+                        return RestuarentScreen(
+                          name: model.name,
+                          image:model.image ,
+                          remainingTime: model.remaingTime,
+                          totalRating: model.totalRating,
+                          subTitle: model.subTitle,
+                          rating: model.ratting,
+                          deliveryTime: model.remaingTime, deliveryPrice: model.deliveryPrice,
+                        );
+                      }),
                 ),
-                Text('Panda exclusives' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * .278,
-                    child: ListView.builder(
-                        itemCount: ExclusiveHelper.itemCount,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index){
-                          ExclusiveItemModel model = ExclusiveHelper.getStatusItem(index);
-                          return RestuarentScreen(
-                            name: model.name,
-                            image:model.image ,
-                            remainingTime: model.remaingTime,
-                            totalRating: model.totalRating,
-                            subTitle: model.subTitle,
-                            rating: model.rating,
-                            deliveryTime: model.remaingTime, deliveryPrice: model.deliveryPrice,
-                          );
-                        }),
-                  ),
-                ),
-                Text('All Restuarent' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
-
-                Container(
-                  height: height * .3,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+              ),
+              Text('Panda exclusives' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * .278,
                   child: ListView.builder(
                       itemCount: ExclusiveHelper.itemCount,
                       scrollDirection: Axis.horizontal,
-                      physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index){
                         ExclusiveItemModel model = ExclusiveHelper.getStatusItem(index);
                         return RestuarentScreen(
@@ -143,9 +118,31 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }),
                 ),
-                SizedBox(height: 20,)
-              ],
-            ),
+              ),
+              Text('All Restuarent' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
+
+              Container(
+                height: height * .3,
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ListView.builder(
+                    itemCount: ExclusiveHelper.itemCount,
+                    scrollDirection: Axis.horizontal,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index){
+                      ExclusiveItemModel model = ExclusiveHelper.getStatusItem(index);
+                      return RestuarentScreen(
+                        name: model.name,
+                        image:model.image ,
+                        remainingTime: model.remaingTime,
+                        totalRating: model.totalRating,
+                        subTitle: model.subTitle,
+                        rating: model.rating,
+                        deliveryTime: model.remaingTime, deliveryPrice: model.deliveryPrice,
+                      );
+                    }),
+              ),
+              SizedBox(height: 20,)
+            ],
           ),
         ),
       ),
