@@ -34,12 +34,12 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                 snap: false,
                 flexibleSpace: FlexibleSpaceBar(
                   collapseMode: CollapseMode.pin,
-                  stretchModes: [
+                  stretchModes: const [
                     StretchMode.blurBackground
                   ],
                   title:  Text(
                     widget.name,
-                    style: TextStyle(color: MyColors.primaryColor),
+                    style: const TextStyle(color: MyColors.primaryColor),
                     textAlign: TextAlign.left,
                   ),
                   background: Column(
@@ -75,7 +75,7 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
             bodyAnimationDuration: const Duration(milliseconds: 800),
             tabAnimationCurve: Curves.ease,
             tabAnimationDuration: const Duration(milliseconds: 150),
-            style: TextStyle(color: Colors.green , fontFamily: Bold , fontSize: 25),
+            style: const TextStyle(color: Colors.green , fontFamily: Bold , fontSize: 25),
             tabs: [
               ScrollableListTab(
                 tab: const ListTab(
@@ -87,39 +87,39 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                 ),
                 body: ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (_, index) => Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ListTile(
-                        title: Text('Chicken Tike Pizz' , style: const TextStyle(fontFamily: Bold),),
-                        subtitle: Text("Onion, capsicum, tomat & olive"),
+                        title: const Text('Chicken Tike Pizz' , style: TextStyle(fontFamily: Bold),),
+                        subtitle: const Text("Onion, capsicum, tomat & olive"),
                         trailing: Container(
                         height: 80,
                         width: 80,
                         alignment: Alignment.center,
-                        child: Image(image: AssetImage('assets/pizza.jpg')),
+                        child: const Image(image: AssetImage('assets/pizza.jpg')),
                       ),
                       ),
                       Row(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Text("RS. 120.00"),
                           ),
                           Container(
                             width: 90,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Color(0xffeab676).withOpacity(0.5)),
-                            child: Center(
+                                color: const Color(0xffeab676).withValues(alpha: 0.5)),
+                            child: const Center(
                               child: Text('🔥 Popular' , style: TextStyle( fontSize: 14,color: blackColor , fontFamily: Medium),),
                             ),
                           )
                         ],
                       ),
-                      Divider()
+                      const Divider()
                     ],
                   ),
                 ),
@@ -135,18 +135,18 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                 body: GridView.builder(
                   shrinkWrap: true,
                   gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                  physics: NeverScrollableScrollPhysics(),
+                  const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (_, index) => Card(
                     child: Stack(
                       fit: StackFit.passthrough,
                       children: [
-                        Image(
+                        const Image(
                           fit: BoxFit.fitHeight,
                           image: AssetImage('assets/cake.jpg'),),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text('Favoruite Deal 1' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w900, fontSize: 18, fontFamily: Bold),),
                         ),
                         Positioned(
@@ -156,11 +156,11 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: Color(0xfffffcff),
+                                  color: const Color(0xfffffcff),
                                   borderRadius: BorderRadius.circular(20.0)
                               ),
-                              child:  Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                              child:  const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                 child: Text('Rs. 180.00' , style: TextStyle(color: blackColor , fontSize: 12, fontFamily: Bold),),
                               ),
 
