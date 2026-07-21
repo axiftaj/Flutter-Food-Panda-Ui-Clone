@@ -1,8 +1,6 @@
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:instagram_clone/compnents/restuarent.dart';
 import 'package:instagram_clone/constats/color.dart';
 import 'package:instagram_clone/constats/constants.dart';
@@ -38,17 +36,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Row(
               children:  [
                 Expanded(child: CupertinoTextField(
-                  padding: EdgeInsets.symmetric(vertical: 12 , horizontal: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 12 , horizontal: 10),
                   placeholder: "Seach for shop & restaurants",
-                  prefix: Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                  prefix: const Padding(
+                    padding: EdgeInsets.only(left: 10),
                     child: Icon(Icons.search , color: Color(0xff7b7b7b) ,),
                   ),
                   decoration: BoxDecoration(
-                      color: Color(0xfff7f7f7),
+                      color: const Color(0xfff7f7f7),
                       borderRadius : BorderRadius.circular(50)
                   ),
-                  style: TextStyle(color: Color(0xff707070) ,
+                  style: const TextStyle(color: Color(0xff707070) ,
                       fontSize: 12, fontFamily: Regular) ,
                 )),
               ],
@@ -66,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                borderRadius: BorderRadius.circular(10),
                child: InkWell(
                  onTap: (){
-                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
                  },
                  child: Container(
                    height: MediaQuery.of(context).size.height * .18,
@@ -78,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                    child: Stack(
                      alignment: Alignment.bottomLeft,
                      children: [
-                       Image(
+                       const Image(
                            fit: BoxFit.fitWidth,
                            width: double.infinity,
                            image: NetworkImage('https://cdn.pixabay.com/photo/2021/01/16/09/05/meal-5921491_960_720.jpg')),
@@ -86,8 +84,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                          padding: const EdgeInsets.all(6.0),
                          child: Container(
                          
-                           child: Padding(
-                             padding: const EdgeInsets.all(8.0),
+                           child: const Padding(
+                             padding: EdgeInsets.all(8.0),
                              child: Column(
                                mainAxisAlignment: MainAxisAlignment.start,
                                crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,14 +113,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                      child: Container(
                        height: MediaQuery.of(context).size.height * .25,
                        decoration: BoxDecoration(
-                           color: Color(0xfffed271),
+                           color: const Color(0xfffed271),
                            borderRadius: BorderRadius.circular(10)
                        ),
-                       child: Padding(
-                         padding: const EdgeInsets.all(10.0),
+                       child: const Padding(
+                         padding: EdgeInsets.all(10.0),
                          child: Stack(
                            alignment: Alignment.center,
-                           children: const [
+                           children: [
                              CircleAvatar(
                                radius: 50,
                                backgroundImage: AssetImage('assets/pandamart.jpg'),
@@ -141,7 +139,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                        ),
                      ),
                    ),
-                   SizedBox(width: 8,),
+                   const SizedBox(width: 8,),
                    Expanded(
                      flex: 1,
                      child: Column(
@@ -150,15 +148,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                            height: MediaQuery.of(context).size.height * .15,
                            width: double.infinity,
                            decoration: BoxDecoration(
-                               color: Color(0xffef9fc4),
+                               color: const Color(0xffef9fc4),
                                borderRadius: BorderRadius.circular(10),
-                             image: DecorationImage(
+                             image: const DecorationImage(
                                  image: AssetImage('assets/food.jpg')
 
                              )
                            ),
-                           child: Padding(
-                             padding: const EdgeInsets.all(10.0),
+                           child: const Padding(
+                             padding: EdgeInsets.all(10.0),
                              child: Column(
                                mainAxisAlignment: MainAxisAlignment.end,
                                crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,16 +168,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                              ),
                            ),
                          ),
-                         SizedBox(height: 5),
+                         const SizedBox(height: 5),
                          Container(
                            height: MediaQuery.of(context).size.height * .1,
                            width: double.infinity,
                            decoration: BoxDecoration(
-                               color: Color(0xff85bfff),
+                               color: const Color(0xff85bfff),
                                borderRadius: BorderRadius.circular(10)
                            ),
-                           child: Padding(
-                             padding: const EdgeInsets.all(10.0),
+                           child: const Padding(
+                             padding: EdgeInsets.all(10.0),
                              child: Column(
                                mainAxisAlignment: MainAxisAlignment.end,
                                crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,10 +197,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                  ],
                ),
              ),
-             Text('Your daily deals' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
+             const Text('Your daily deals' , style: TextStyle(color: Color(0xff323232) , fontSize: 15, fontFamily: Bold),),
              Padding(
                padding: const EdgeInsets.symmetric(vertical: 10),
-               child: Container(
+               child: SizedBox(
                  height: MediaQuery.of(context).size.height * .278,
 
                  child: ListView.builder(
@@ -243,7 +241,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             ListTile(
               title: const Text('Setting' , style: TextStyle(fontFamily: Medium , color : Colors.black)),
-              leading: Icon(Icons.settings_outlined , color: MyColors.primaryColor,),
+              leading: const Icon(Icons.settings_outlined , color: MyColors.primaryColor,),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -253,7 +251,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             ListTile(
               title: const Text('Help center 2' , style: TextStyle(fontFamily: Medium , color : Colors.black)),
-              leading: Icon(Icons.help_outline, color: MyColors.primaryColor),
+              leading: const Icon(Icons.help_outline, color: MyColors.primaryColor),
 
               onTap: () {
                 // Update the state of the app
@@ -264,7 +262,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             ListTile(
               title: const Text('More' , style: TextStyle(fontFamily: Medium , color : Colors.black)),
-              leading: Icon(Icons.more_horiz, color: MyColors.primaryColor),
+              leading: const Icon(Icons.more_horiz, color: MyColors.primaryColor),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -274,7 +272,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             ListTile(
               title: const Text('Sign up or Login in' , style: TextStyle(fontFamily: Medium , color : Colors.black)),
-              leading: Icon(Icons.login_outlined, color: MyColors.primaryColor),
+              leading: const Icon(Icons.login_outlined, color: MyColors.primaryColor),
               onTap: () {
                 // Update the state of the app
                 // ...

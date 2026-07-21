@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:instagram_clone/constats/color.dart';
 import 'package:instagram_clone/dashboard/welcome.dart';
 
@@ -20,9 +19,9 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
 
-    Timer(Duration(seconds: 3),
+    Timer(const Duration(seconds: 3),
             ()=> Navigator.push(
-            context, MaterialPageRoute(builder: (context) => WelcomeScreen())));
+            context, MaterialPageRoute(builder: (context) => const WelcomeScreen())));
   }
   @override
   Widget build(BuildContext context) {
@@ -32,13 +31,13 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.center,
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/splash.png')
               )
             ),
           ),
-          Positioned(
+          const Positioned(
               bottom: 50 ,
               child: CupertinoActivityIndicator(color: Colors.white,))
         ],
